@@ -1,0 +1,125 @@
+
+
+# Contains Duplicate
+
+## 🧠 Problem Statement
+Given an integer array `arr`, return `true` if any value appears **at least twice**, and return `false` if every element is distinct.
+
+---
+
+## 🔍 Example
+
+```
+Input: [1, 2, 5, 5, 3]
+Output: true
+```
+
+```
+Input: [1, 2, 3, 4]
+Output: false
+```
+
+---
+
+## 🚀 Approaches
+
+---
+
+### 🟥 1. Brute Force Approach
+
+#### 💡 Idea:
+Compare every element with every other element.
+
+#### 🔧 Code Logic:
+- Use two loops
+- Check if `arr[i] == arr[j]`
+
+#### ⏱ Complexity:
+```
+Time: O(n²)
+Space: O(1)
+```
+
+#### ❌ Drawback:
+- Very slow for large inputs
+
+---
+
+### 🟨 2. HashMap Approach (Frequency Count)
+
+#### 💡 Idea:
+Store frequency of each element using a hashmap.
+
+#### 🔧 Code Logic:
+- Traverse array
+- Store count using `unordered_map`
+- If any value > 1 → duplicate exists
+
+#### ⏱ Complexity:
+```
+Time: O(n)
+Space: O(n)
+```
+
+#### ⚠️ Note:
+- Stores extra information (count), which is not always needed
+
+---
+
+### 🟩 3. HashSet Approach (Optimal)
+
+#### 💡 Idea:
+Check if an element is already seen.
+
+#### 🔧 Code Logic:
+- Create `unordered_set`
+- For each element:
+  - If already present → duplicate found
+  - Else → insert into set
+
+#### ⏱ Complexity:
+```
+Time: O(n)
+Space: O(n)
+```
+
+#### ⭐ Why Best?
+- No unnecessary counting
+- Simple and efficient
+
+---
+
+## 🧠 Key Learning
+
+```
+Brute → Compare everything  
+Better → Store counts (HashMap)  
+Optimal → Check existence (HashSet)
+```
+
+---
+
+## 🔥 Pattern Recognition
+
+| Situation | Data Structure |
+|----------|--------------|
+| Need frequency | HashMap |
+| Need existence check | HashSet |
+
+---
+
+## 🎯 Interview Tip
+
+Say this:
+
+> "We can solve this using a HashSet to track seen elements. If an element is already present, we return true."
+
+---
+
+## 💯 Final Takeaway
+
+```
+If problem asks:
+- "Count" → use HashMap  
+- "Duplicate / existence" → use HashSet
+```
