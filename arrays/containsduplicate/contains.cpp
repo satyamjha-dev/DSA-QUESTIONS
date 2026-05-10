@@ -65,23 +65,23 @@
 
 
 //!optimized approach-using hash set to track seen elements
-// #include <iostream>
-// #include <unordered_set>
-// using namespace std;
+#include <iostream>
+#include <unordered_set>
+using namespace std;
 
-// int main(){
-//     int arr[] = {1, 2, 5, 5, 3};
-//     int n = sizeof(arr) / sizeof(arr[0]);
+int main(){
+    int arr[] = {1, 2, 5, 5, 3};
+    int n = sizeof(arr) / sizeof(arr[0]);
 
-//     unordered_set<int> seen;
+    unordered_set<int> seen;
 
-//     for (int i = 0; i < n; i++) {
-//         if (seen.count(arr[i]) > 0) {
-//             cout << "Duplicate found: " << arr[i] << endl;
-//             return 0;   
-//         }
-//         seen.insert(arr[i]);  // ✅ INSERT INSIDE LOOP
-//     }
+    for (int i = 0; i < n; i++) {
+        if (seen.count(arr[i]) > 0) {
+            cout << "Duplicate found: " << arr[i] << endl;
+            return 0;   
+        }
+        seen.insert(arr[i]);  // ✅ INSERT INSIDE LOOP
+    }
 
-//     cout << "No duplicate found." << endl;
-// }
+    cout << "No duplicate found." << endl;
+}
